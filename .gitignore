@@ -1,0 +1,16 @@
+# Secret keys - never upload
+.env
+
+# Virtual environment stuff (not needed since we used conda, but just in case)
+venv/
+env/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Uploaded audio files (user data, shouldn't be in the repo)
+uploads/
+
+# Mac system file
+.DS_Store

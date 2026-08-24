@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meeting Summarizer</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 700px; margin: 50px auto; padding: 20px; }
+        h1 { color: #333; }
+        .box { background: #f4f4f4; padding: 15px; border-radius: 8px; margin-top: 20px; white-space: pre-wrap; }
+        button { background: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>🎙️ Meeting Summarizer</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="audio_file" accept="audio/*" required>
+        <button type="submit">Upload & Summarize</button>
+    </form>
+
+    {% if transcript %}
+    <h2>Transcript</h2>
+    <div class="box">{{ transcript }}</div>
+    {% endif %}
+
+    {% if summary %}
+    <h2>Summary</h2>
+    <div class="box">{{ summary }}</div>
+    {% endif %}
+</body>
+</html>
